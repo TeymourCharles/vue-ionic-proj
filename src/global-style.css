@@ -1,8 +1,46 @@
 .no-margin {
     margin: 0;
-  }
-
-.padding-chevron {
-padding-top: 23px;
 }
 
+.padding-chevron {
+    padding-top: 23px;
+}
+
+.round-img {
+    border-radius: 20px;
+    
+}
+
+.img-size-slide {
+    height: 150px;
+    width: 340px;
+}
+
+
+.no-underline {
+    text-decoration: none;
+    color:black;
+}
+
+.no-bottom-border {
+    --border-width: 0;
+    --inner-border-width: 0;
+}
+
+.small-circle {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    right: 36px;
+}
+
+.font-weight {
+    font-weight: bold;
+}
+
+.img-size-category {
+    height: 300px;
+    width: 220px;
+}

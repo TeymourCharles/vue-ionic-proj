@@ -116,15 +116,6 @@ import { ellipse,
 </script>
 
 <style scoped>
-.no-bottom-border {
-  --border-width: 0;
-  --inner-border-width: 0;
-}
-
-.no-underline {
-  text-decoration: none;
-  color:black;
-}
 
 .round-logout-btn {
   --border-radius: 15px;
