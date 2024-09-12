@@ -1,7 +1,10 @@
 <template>
-  <ion-page>
+  <ion-page id="main-content">
     <ion-header>
       <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
         <ion-title>Tab 1</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -18,6 +21,6 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonMenuButton } from '@ionic/vue';
 import ExploreContainer from '@/components/ExploreContainer.vue';
 </script>
