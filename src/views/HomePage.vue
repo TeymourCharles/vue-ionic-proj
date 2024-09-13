@@ -5,14 +5,17 @@
           <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
           </ion-buttons>
-          <ion-row class="ion-justify-content-center">
+          <ion-row class="">
               <ion-col class="ion-text-center ion-padding-top">
               </ion-col>
               <ion-col>
                 <p>0 points</p>
               </ion-col>
-              <ion-col class="padding-chevron">
-                <ion-icon :icon="chevronForward" />
+              <ion-col>
+                <div class="chevron-box-icon">
+                  <ion-icon :icon="chevronForward" />
+                </div>
+            
               </ion-col>
             </ion-row>
             <ion-avatar class="container-size ion-padding-end" aria-hidden="true" slot="end">
@@ -22,29 +25,39 @@
       </ion-header>
       <ion-content>
         <ion-header class="ion-justify-content-center ion-margin-top ion-no-border">
-          <ion-row class="ion-text-start" size="20">
-            <ion-col class="ion-margin-start" size="3">
-              <img src="../assets/fastfood-img.png" class="fastfood-img-size" alt="fastfood image">
-            </ion-col>
-            <ion-col class="ion-align-self-center">
-              <span class="padding-top">Anneoyong, Chou!</span>
-              <h1 class="no-margin">What do you want to eat?</h1>
-            </ion-col>
-          </ion-row>
+          <ion-grid>
+            <ion-row class="ion-text-start">
+              <ion-col class="ion-margin-start" size="3">
+                <img src="../assets/fastfood-img.png" class="fastfood-img-size" alt="fastfood image">
+              </ion-col>
+              <ion-col class="ion-align-self-center">
+                <span class="padding-top">Anneoyong, Chou!</span>
+                <h1 class="no-margin">What do you want to eat?</h1>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        
         </ion-header>
         
         <ion-searchbar class="search-bar-size" placeholder="try our new Steak Fries Veggies"></ion-searchbar>
         
-        <ion-row>
-          <ion-col>
-            <h1 class="ion-margin-start no-margin font-weight" >Special Offers!</h1>
-          </ion-col>
-          <ion-col class="ion-text-end ion-align-self-center" size="4">
-            <span class="ion-padding-end text-color">View All</span>
-            <ion-icon class="" color="danger" :icon="chevronForward" />
-          </ion-col>
-          
-        </ion-row>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="7">
+              <h1 class="ion-margin-start no-margin font-weight" >Special Offers!</h1>
+            </ion-col>
+            <ion-col class="ion-text-end ion-align-self-center" size="4">
+              <span class="ion-padding-end text-color">View All</span>
+            </ion-col>
+            <ion-col>
+              <div class="chevron-box">
+                <ion-icon class="" color="danger" :icon="chevronForward" />
+              </div>
+            </ion-col>
+            
+          </ion-row>
+        </ion-grid>
+        
         <ion-item class="no-bottom-border">
           <img class="ion-margin-start ion-margin-top round-img img-size-slide" src="../assets/fastfood-slide-img.png" alt="image slide">
           
@@ -57,8 +70,13 @@
           <span class="text-position-one">Chicken</span>
           <img class="ion-margin-start ion-margin-top round-img img-size-category" src="../assets/chicken-category.png" alt="image slide">
           <span class="text-position-two">Seafoods</span>
+          
         </ion-item>
-        
+        <a class="order-now-btn" slot="fixed" href="/tabs/orderpage">
+          <ion-button class="ion-margin-start round-logout-btn order-btn" color="danger">
+            Order Now!
+          </ion-button>
+        </a>
       </ion-content>
     </ion-page>
   </template>
@@ -78,11 +96,6 @@ import { chevronForward } from 'ionicons/icons'
 }
 .container-size {
     width:20%;
-}
-
-.search-bar-size {
-  --border-radius: 10px;
-    height: 100px;
 }
 
 .added-margin-top {
@@ -108,10 +121,24 @@ import { chevronForward } from 'ionicons/icons'
 }
 
 .fastfood-img-size {
-  width: 100px;
-  height: 100px;
+  width: 200px;
 }
 
+.order-btn {
+  width: 150px;
+}
 
+.order-now-btn {
+  text-decoration: none;
+  color:white;
+  --border-radius: 15px;
+  bottom: 30px;
+  right: 33px;
+}
 
+.chevron-box {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
 </style>

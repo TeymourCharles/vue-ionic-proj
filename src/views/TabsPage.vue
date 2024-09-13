@@ -1,7 +1,7 @@
 <template>
   <ion-menu content-id="main-content">
     <ion-nav class="ion-no-border">
-      <ion-toolbar class="ion-padding-top">
+      <ion-toolbar class="">
         <ion-avatar aria-hidden="true" slot="start">
           <img class="ion-margin-start" alt="Avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </ion-avatar>
@@ -11,11 +11,12 @@
           <ion-col>
             <p>0 points</p>
           </ion-col>
-          <ion-col class="padding-chevron">
-            <ion-icon :icon="chevronForward" />
+          <ion-col>
+            <div class="chevron-box-icon">
+              <ion-icon :icon="chevronForward" />
+            </div>
           </ion-col>
         </ion-row>
-        
       </ion-toolbar>
       <h1 class="ion-padding-start no-margin ion-margin-top">Firstnme Lastname</h1>
       <span style="color: grey;" class="ion-margin-start" >+63 912 345 6789</span>
@@ -73,22 +74,7 @@
   <ion-page> 
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
-      <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="tab1" href="/tabs/tab1">
-          <ion-icon aria-hidden="true" :icon="triangle" />
-          <ion-label>Tab 1</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button tab="tab2" href="/tabs/tab2">
-          <ion-icon aria-hidden="true" :icon="ellipse" />
-          <ion-label>Tab 2</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button tab="tab3" href="/tabs/tab3">
-          <ion-icon aria-hidden="true" :icon="square" />
-          <ion-label>Tab 3</ion-label>
-        </ion-tab-button>
-      </ion-tab-bar>
+      
     </ion-tabs>
   </ion-page>
 </template>
@@ -119,6 +105,8 @@ import { ellipse,
 
 .round-logout-btn {
   --border-radius: 15px;
+    position: absolute;
+    bottom: 45px;
 }
 
 .icon-opacity {
