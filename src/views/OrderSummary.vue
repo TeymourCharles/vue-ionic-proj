@@ -75,6 +75,151 @@
             </ion-grid>
 
             <h1 class="orders-title ion-margin-start">Orders</h1>
+
+            <div class="order-summary-container">
+                <ion-row>
+                    
+                    <div class="order-summary-box">
+                        <ion-grid>
+                            
+                            <ion-row>
+                                <ion-col size="4">
+                                    <img class="beeffries-img" src="../assets/beeffries-meal-lg.png" alt="beef fries order">
+                                </ion-col>
+                                <ion-col>
+                                    <h5 class="order-name">Steak Fries Veggies</h5>
+                                    <p class="no-margin">1x Tomato Sauce</p>
+                                    <p class="no-margin">1x Regular Coke</p>
+                                    <p class="no-margin">1x Fried Chicken</p>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row class="ion-margin-top">
+                                <ion-col>
+                                    <p class="ion-margin-start ptag-price-item">P 175</p>
+                                </ion-col>
+                                <ion-col size="5" class="ion-align-self-center">
+                                    <ion-row class="ion-margin-end">
+                                        <ion-col class="remove-add-icon-sumitem-bg">
+                                            <div class="remove-add-icon-sumitem-bg">
+                                                <ion-icon class="" color="danger" :icon="removeOutline"/>
+                                            </div>
+                                        </ion-col>
+                                        <ion-col class="quantity-col ion-align-self-center">
+                                            <p class="quantity no-margin">1</p>
+                                        </ion-col>
+                                        <ion-col class="remove-add-icon-sumitem-bg">
+                                            <div class="remove-add-icon-sumitem-bg">
+                                                <ion-icon class="" color="danger" :icon="addOutline"/>
+                                            </div>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-col>
+                    
+                            </ion-row>
+                        </ion-grid>
+                    </div>
+                    <div class="ellipsis-box">
+                        <ion-icon class="ellipsis-icon" :icon="ellipsisVerticalOutline"/>
+                    </div> 
+                </ion-row>
+            </div>
+                <h1 class="ion-margin-start payment-title">Payment Option</h1>
+                    <ion-grid>
+                        <ion-row>
+                            <div class="payment-option-box">
+                                <ion-row>
+                                    <ion-col>
+                                        <h6 class="no-margin cod-font-style ion-margin-start">Cash on Delivery</h6>
+                                        <p class="no-margin ion-margin-start pay-font-style">Pay when you received order</p>
+                                    </ion-col>
+                                    <ion-col size="2">
+                                        <ion-row>
+                                            <ion-col class="payment-opt-checkbox">
+                                                <ion-checkbox name="address" id="address" color="secondary" value="option"></ion-checkbox>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-col>
+                                </ion-row>
+                            </div>
+                        </ion-row>
+                        <ion-row>
+                            <div class="payment-option-box">
+                                <ion-row>
+                                    <ion-col>
+                                        <h6 class="no-margin cod-font-style ion-margin-start">Cash on Delivery</h6>
+                                        <p class="no-margin ion-margin-start pay-font-style">Pay when you received order</p>
+                                    </ion-col>
+                                    <ion-col size="2">
+                                        <ion-row>
+                                            <ion-col class="payment-opt-checkbox">
+                                                <ion-checkbox name="address" id="address" color="secondary" value="option"></ion-checkbox>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-col>
+                                </ion-row>
+                            </div>
+                        </ion-row>
+                        <ion-row>
+                            <div class="payment-option-box">
+                                <ion-row>
+                                    <ion-col>
+                                        <h6 class="no-margin cod-font-style ion-margin-start">Cash on Delivery</h6>
+                                        <p class="no-margin ion-margin-start pay-font-style">Pay when you received order</p>
+                                    </ion-col>
+                                    <ion-col size="2">
+                                        <ion-row>
+                                            <ion-col class="payment-opt-checkbox">
+                                                <ion-checkbox name="address" id="address" color="secondary" value="option"></ion-checkbox>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-col>
+                                </ion-row>
+                            </div>
+                        </ion-row>
+                        <ion-row>
+                            <div class="payment-option-box">
+                                <ion-row>
+                                    <ion-col>
+                                        <h6 class="no-margin cod-font-style ion-margin-start">Cash on Delivery</h6>
+                                        <p class="no-margin ion-margin-start pay-font-style">Pay when you received order</p>
+                                    </ion-col>
+                                    <ion-col size="2">
+                                        <ion-row>
+                                            <ion-col class="payment-opt-checkbox">
+                                                <ion-checkbox name="address" id="address" color="secondary" value="option"></ion-checkbox>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-col>
+                                </ion-row>
+                            </div>
+                        </ion-row>
+                    </ion-grid>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col class="sab-del">
+                                <p>Sabtotal</p>
+                                <p>Delivery Charge</p>
+                            </ion-col>
+                            <ion-col class="ion-text-end ion-maring-end sab-del">
+                                <p>P 185</p>
+                                <p>P 59</p>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    <div class="change-for-align-box">
+                        <div class="change-for-box">
+                            <ion-row>
+                                <ion-col>
+                                    <p class="ion-margin-start change-for-style no-margin">Change for </p>
+                                    <p class="ion-margin-start eg-style no-margin">e.g 1.000 </p>
+                                </ion-col>
+                            </ion-row>
+                        </div>
+                    </div>
+                    <ion-toolbar slot="bottom">
+                        dfs
+                    </ion-toolbar>
+            
         </ion-content>
     </ion-page>
 </template>
@@ -95,7 +240,7 @@ import { IonPage,
     IonItem,
     
 } from '@ionic/vue'; 
-import { bagHandle, chevronBack, ellipsisVerticalOutline } from 'ionicons/icons';
+import { addOutline, bagHandle, chevronBack, ellipsisVerticalOutline, removeOutline } from 'ionicons/icons';
 </script>
 
 <style scoped>
@@ -104,7 +249,7 @@ import { bagHandle, chevronBack, ellipsisVerticalOutline } from 'ionicons/icons'
     background-color: rgb(241, 238, 238);
     border-radius: 16px;
     width: 350px;
-    margin: 3px 0px 3px 3px;
+    margin: 5px 0px 5px 3px;
 }
 
 .summary-details-box-align {
@@ -127,10 +272,110 @@ import { bagHandle, chevronBack, ellipsisVerticalOutline } from 'ionicons/icons'
 }
 
 .address-style {
-    color: rgb(151, 150, 150);;
+    color: rgb(151, 150, 150);
 }
 
 .orders-title {
     font-weight: bold;
+}
+
+.order-summary-container {
+    display: flex;
+}
+
+.order-summary-box {
+    background-color: rgb(241, 238, 238);
+    height: 200px;
+    width: 348px;
+    margin: 3px 0px 3px 10px;
+    border-radius: 16px;
+}
+
+.beeffries-img {
+    width: 90px;
+    margin-top: 35px;
+    margin-left: 18px;
+}
+
+.order-name {
+    font-weight: bold;
+}
+
+.remove-add-icon-sumitem-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 15px;
+    background-color: rgb(185, 185, 185);
+    border-radius: 9px;
+}
+
+.quantity {
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.quantity-col {
+    text-align: center;
+}
+
+.ptag-price-item {
+    font-weight: bold;
+    color: red;
+}
+
+.payment-title {
+    font-weight: bold;
+}
+
+.payment-option-box {
+    height: 80px;
+    width: 375px;
+    background-color: rgb(241, 238, 238);
+    margin: 5px 5px 5px 5px;
+    border-radius: 16px;
+}
+
+.cod-font-style {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.pay-font-style {
+    color: rgb(151, 150, 150);
+    margin-top: 5px;
+}
+
+.payment-opt-checkbox {
+    margin: 3px 0px 3px 10px;
+}
+
+.sab-del {
+    font-weight: bold;
+}
+
+.change-for-box {
+    background-color: rgb(245, 245, 245);
+    height: 57px;
+    width: 366px;
+    border-radius: 16px;
+    margin: 0px 0px 5px 0px;
+}
+
+.change-for-align-box {
+    display: flex;
+    justify-content: center;
+}
+
+.change-for-style {
+    color:rgb(151, 150, 150);
+    margin-top: 4px;
+}
+
+.eg-style {
+    color:rgb(213, 211, 211);
+    margin-top: 2px;
 }
 </style>
