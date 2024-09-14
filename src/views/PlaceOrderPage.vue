@@ -163,7 +163,7 @@
             </div>
             <div class="transparent-box"></div>
             
-            <ion-button id="open-custom-dialog" class="ion-margin-start round-addtobag-btn addtobag-btn" slot="fixed" color="danger">
+            <ion-button id="open-custom-dialog" class="round-addtobag-btn addtobag-btn" slot="fixed" color="danger">
                 Add to bag
             </ion-button>
             
@@ -425,8 +425,7 @@ ion-modal#example-modal img{
 
 .round-addtobag-btn {
    border-radius: 16px; 
-   width: 358px;
-   margin-bottom: 10px;
+   width: 90%;
    height: 65px;
 }
 
@@ -458,7 +457,10 @@ ion-modal#example-modal img{
 
 .addtobag-btn {
     position: absolute;
-    bottom: 0px;
+    bottom: 5px;
+    margin-left: 20px;
+    margin-right:20px ;
+    
 }
 
 

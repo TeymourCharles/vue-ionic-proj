@@ -76,12 +76,10 @@
 
             <h1 class="orders-title ion-margin-start">Orders</h1>
 
-            <div class="order-summary-container">
+            <ion-grid>
                 <ion-row>
-                    
-                    <div class="order-summary-box">
-                        <ion-grid>
-                            
+                    <div class="order-summary-container">
+                        <div class="order-summary-box">
                             <ion-row>
                                 <ion-col size="4">
                                     <img class="beeffries-img" src="../assets/beeffries-meal-lg.png" alt="beef fries order">
@@ -114,15 +112,15 @@
                                         </ion-col>
                                     </ion-row>
                                 </ion-col>
-                    
                             </ion-row>
-                        </ion-grid>
+                        </div>
+                        <div class="ellipsis-box">
+                            <ion-icon class="ellipsis-icon" :icon="ellipsisVerticalOutline"/>
+                        </div> 
                     </div>
-                    <div class="ellipsis-box">
-                        <ion-icon class="ellipsis-icon" :icon="ellipsisVerticalOutline"/>
-                    </div> 
                 </ion-row>
-            </div>
+            </ion-grid>
+            
                 <h1 class="ion-margin-start payment-title">Payment Option</h1>
                     <ion-grid>
                         <ion-row>
@@ -134,7 +132,7 @@
                                     </ion-col>
                                     <ion-col size="2">
                                         <ion-row>
-                                            <ion-col class="payment-opt-checkbox">
+                                            <ion-col class="ion-text-end ion-margin-top ion-margin end">
                                                 <ion-checkbox name="address" id="address" color="secondary" value="option"></ion-checkbox>
                                             </ion-col>
                                         </ion-row>
@@ -151,7 +149,7 @@
                                     </ion-col>
                                     <ion-col size="2">
                                         <ion-row>
-                                            <ion-col class="payment-opt-checkbox">
+                                            <ion-col class="ion-text-end ion-margin-top ion-margin end">
                                                 <ion-checkbox name="address" id="address" color="secondary" value="option"></ion-checkbox>
                                             </ion-col>
                                         </ion-row>
@@ -168,7 +166,7 @@
                                     </ion-col>
                                     <ion-col size="2">
                                         <ion-row>
-                                            <ion-col class="payment-opt-checkbox">
+                                            <ion-col class="ion-text-end ion-margin-top ion-margin end">
                                                 <ion-checkbox name="address" id="address" color="secondary" value="option"></ion-checkbox>
                                             </ion-col>
                                         </ion-row>
@@ -185,7 +183,7 @@
                                     </ion-col>
                                     <ion-col size="2">
                                         <ion-row>
-                                            <ion-col class="payment-opt-checkbox">
+                                            <ion-col class="ion-text-end ion-margin-top ion-margin end">
                                                 <ion-checkbox name="address" id="address" color="secondary" value="option"></ion-checkbox>
                                             </ion-col>
                                         </ion-row>
@@ -216,8 +214,25 @@
                             </ion-row>
                         </div>
                     </div>
-                    <ion-toolbar slot="bottom">
-                        dfs
+                    <div class="transparent-box"></div>
+                    <ion-toolbar class="toolbar" slot="fixed">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col>
+                                    <p class="no-margin">Grand Total</p>
+                                    <h6 class="grand-total-num">P 244</h6>
+                                </ion-col>
+                                <ion-col class="">
+                                    <div class="place-order-box">
+                                        <a href="/tabs/receivedorder">
+                                            <ion-button class="place-order-btn" color="danger">
+                                                Place Order
+                                            </ion-button>
+                                        </a>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
                     </ion-toolbar>
             
         </ion-content>
@@ -238,6 +253,7 @@ import { IonPage,
     IonModal,
     IonList,
     IonItem,
+    IonNav
     
 } from '@ionic/vue'; 
 import { addOutline, bagHandle, chevronBack, ellipsisVerticalOutline, removeOutline } from 'ionicons/icons';
@@ -248,13 +264,13 @@ import { addOutline, bagHandle, chevronBack, ellipsisVerticalOutline, removeOutl
     height: 120px;
     background-color: rgb(241, 238, 238);
     border-radius: 16px;
-    width: 350px;
+    width: 100%;
     margin: 5px 0px 5px 3px;
 }
 
 .summary-details-box-align {
     display: flex;
-
+    flex-grow: 1;
 }
 .ellipsis-icon {
     font-size: 30px;
@@ -281,12 +297,13 @@ import { addOutline, bagHandle, chevronBack, ellipsisVerticalOutline, removeOutl
 
 .order-summary-container {
     display: flex;
+    flex-grow: 1;
 }
 
 .order-summary-box {
     background-color: rgb(241, 238, 238);
     height: 200px;
-    width: 348px;
+    width: 100%;
     margin: 3px 0px 3px 10px;
     border-radius: 16px;
 }
@@ -332,7 +349,7 @@ import { addOutline, bagHandle, chevronBack, ellipsisVerticalOutline, removeOutl
 
 .payment-option-box {
     height: 80px;
-    width: 375px;
+    width: 100%;
     background-color: rgb(241, 238, 238);
     margin: 5px 5px 5px 5px;
     border-radius: 16px;
@@ -348,10 +365,6 @@ import { addOutline, bagHandle, chevronBack, ellipsisVerticalOutline, removeOutl
     margin-top: 5px;
 }
 
-.payment-opt-checkbox {
-    margin: 3px 0px 3px 10px;
-}
-
 .sab-del {
     font-weight: bold;
 }
@@ -359,9 +372,9 @@ import { addOutline, bagHandle, chevronBack, ellipsisVerticalOutline, removeOutl
 .change-for-box {
     background-color: rgb(245, 245, 245);
     height: 57px;
-    width: 366px;
+    width: 100%;
     border-radius: 16px;
-    margin: 0px 0px 5px 0px;
+    margin: 0px 10px 0px 10px;
 }
 
 .change-for-align-box {
@@ -377,5 +390,29 @@ import { addOutline, bagHandle, chevronBack, ellipsisVerticalOutline, removeOutl
 .eg-style {
     color:rgb(213, 211, 211);
     margin-top: 2px;
+}
+
+.transparent-box {
+    height: 90px;
+}
+
+.toolbar {
+    height: 80px;
+
+    bottom: 0px;
+}
+
+.grand-total-num {
+    font-weight: bold;
+}
+
+.place-order-btn {
+    width: 170px;
+}
+
+.place-order-box {
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 </style>

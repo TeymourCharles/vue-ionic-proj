@@ -31,6 +31,14 @@ const routes: Array<RouteRecordRaw> = [
         path: 'ordersummary',
         component: () => import('@/views/OrderSummary.vue')
       },
+      {
+        path: 'receivedorder',
+        component: () => import('@/views/ReceivedOrder.vue')
+      },
+      {
+        path: 'loyaltypoints',
+        component: () => import('@/views/LoyaltyPoints.vue')
+      },
 
 
       {

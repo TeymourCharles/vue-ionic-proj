@@ -3,23 +3,27 @@
       <ion-header class="ion-no-border">
         <ion-toolbar>
           <ion-buttons slot="start">
-            <ion-menu-button></ion-menu-button>
+            <ion-menu-button class="menu-btn"></ion-menu-button>
           </ion-buttons>
-          <ion-row class="">
+          <a href="/tabs/loyaltypoints" style="text-decoration: none; color: black;">
+            <ion-row class="">
               <ion-col class="ion-text-center ion-padding-top">
-              </ion-col>
-              <ion-col>
-                <p>0 points</p>
-              </ion-col>
-              <ion-col>
-                <div class="chevron-box-icon">
-                  <ion-icon :icon="chevronForward" />
+                <div class="crown-icon-box">
+                    <img src="../assets/crown.png" style="width: 30px;" alt="crown icon">
                 </div>
-            
-              </ion-col>
-            </ion-row>
+                </ion-col>
+                <ion-col>
+                  <p>0 points</p>
+                </ion-col>
+                <ion-col>
+                  <div class="chevron-box-icon">
+                    <ion-icon color="danger" :icon="chevronForward" />
+                  </div>
+                </ion-col>
+              </ion-row>
+            </a>
             <ion-avatar class="container-size ion-padding-end" aria-hidden="true" slot="end">
-                <img class="avatar-size" alt="Avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                <img style=" width: 40px; height: 40px;" alt="Avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
             </ion-avatar>
         </ion-toolbar>
       </ion-header>
@@ -47,7 +51,7 @@
               <h1 class="ion-margin-start no-margin font-weight" >Special Offers!</h1>
             </ion-col>
             <ion-col class="ion-text-end ion-align-self-center" size="4">
-              <span class="ion-padding-end text-color">View All</span>
+              <span class="ion-padding-end" style="color: rgb(183, 47, 47);">View All</span>
             </ion-col>
             <ion-col>
               <div class="chevron-box">
@@ -73,7 +77,7 @@
           
         </ion-item>
         <a class="order-now-btn" slot="fixed" href="/tabs/orderpage">
-          <ion-button class="ion-margin-start round-logout-btn order-btn" color="danger">
+          <ion-button style="width: 150px;" class="ion-margin-start round-logout-btn" color="danger">
             Order Now!
           </ion-button>
         </a>
@@ -89,21 +93,12 @@ import { chevronForward } from 'ionicons/icons'
 
 <style scoped>
 
-.avatar-size {
-    width: 40px;
-    height: 40px;
-    
-}
 .container-size {
     width:20%;
 }
 
 .added-margin-top {
   margin-top: 30px;
-}
-
-.text-color {
-  color: rgb(183, 47, 47);
 }
 
 .text-position-one {
@@ -124,10 +119,6 @@ import { chevronForward } from 'ionicons/icons'
   width: 200px;
 }
 
-.order-btn {
-  width: 150px;
-}
-
 .order-now-btn {
   text-decoration: none;
   color:white;
@@ -140,5 +131,11 @@ import { chevronForward } from 'ionicons/icons'
   display: flex;
   align-items: center;
   height: 100%;
+}
+
+.crown-icon-box {
+  display: flex;
+  justify-content: center;
+  margin-left: 20px;
 }
 </style>

@@ -3,7 +3,7 @@
         <ion-header class="ion-no-border">
             <ion-toolbar class="y-padding">
                 <ion-buttons slot="start">
-                    <ion-menu-button></ion-menu-button>
+                    <ion-menu-button class="menu-btn"></ion-menu-button>
                 </ion-buttons>
                 <ion-row class="">
                     <ion-col class="ion-text-center ion-align-self-center">

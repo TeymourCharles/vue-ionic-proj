@@ -5,18 +5,23 @@
         <ion-avatar aria-hidden="true" slot="start">
           <img class="ion-margin-start" alt="Avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </ion-avatar>
-        <ion-row class="ion-justify-content-center">
-          <ion-col class="ion-text-center ion-padding-top">
-          </ion-col>
-          <ion-col>
-            <p>0 points</p>
-          </ion-col>
-          <ion-col>
-            <div class="chevron-box-icon">
-              <ion-icon :icon="chevronForward" />
-            </div>
-          </ion-col>
-        </ion-row>
+        <a href="/tabs/loyaltypoints" class="text-decor">
+          <ion-row class="ion-justify-content-center">
+            <ion-col class="ion-text-center ion-padding-top">
+              <div class="crown-icon-box">
+                <img src="../assets/crown.png" style="width: 30px;" alt="crown icon">
+              </div>
+            </ion-col>
+            <ion-col>
+              <p>0 points</p>
+            </ion-col>
+            <ion-col>
+              <div class="chevron-box-icon">
+                <ion-icon color="danger" :icon="chevronForward" />
+              </div>
+            </ion-col>
+          </ion-row>
+        </a>
       </ion-toolbar>
       <h1 class="ion-padding-start no-margin ion-margin-top">Firstnme Lastname</h1>
       <span style="color: grey;" class="ion-margin-start" >+63 912 345 6789</span>
@@ -33,7 +38,7 @@
         <ion-item class="no-bottom-border">
           <ion-icon class="icon-opacity" :icon="notifications"/>
           <a class="no-underline ion-padding-start" href="">Notifications</a>
-          <div slot="end" class="notif-bg ion-margin-end ion-text-center">4</div>
+          <ion-badge slot="end" color="warning">1</ion-badge>
         </ion-item>
         <ion-item class="no-bottom-border">
           <ion-icon class="icon-opacity" :icon="storefront"/>
@@ -46,7 +51,7 @@
         <ion-item class="no-bottom-border">
           <ion-icon class="icon-opacity" :icon="bagHandle"/>
           <a class="no-underline ion-padding-start" href="">My Orders</a>
-          <div slot="end" class="notif-bg ion-margin-end ion-text-center">2</div>
+          <ion-badge slot="end" color="warning">2</ion-badge>
         </ion-item>
         <ion-item class="no-bottom-border">
           <ion-icon class="icon-opacity" :icon="person"/>
@@ -65,23 +70,19 @@
           <a class="no-underline ion-padding-start" href="">Order History</a>
         </ion-item>
       </ion-list>
-
       <ion-button style="width: 150px;" class="ion-margin-start round-logout-btn" color="danger">Logout</ion-button>
     </ion-nav>
-
-    
   </ion-menu>
   <ion-page> 
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
-      
     </ion-tabs>
   </ion-page>
 </template>
 
 <script setup lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet, IonButton,
-          IonList, IonItem
+          IonList, IonItem, IonBadge
 } from '@ionic/vue';
 import { ellipse, 
         square, 
@@ -121,4 +122,13 @@ import { ellipse,
   color: white;
 }
 
+.text-decor {
+  text-decoration: none;
+  color: black;
+}
+
+.crown-icon-box {
+  display: flex;
+  justify-content: right;
+}
 </style>
