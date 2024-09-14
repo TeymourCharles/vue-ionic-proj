@@ -29,9 +29,22 @@
                             </ion-row>
                         </div>
                         <div class="ellipsis-box">
-                            <ion-icon class="ellipsis-icon" :icon="ellipsisVerticalOutline"/>
+                            <ion-icon :class="{'clickable-ellipsis-icon' : showButtons}" @click="toggleButtons" style="font-size: 30px; color: orange;" :icon="ellipsisVerticalOutline"/>
                         </div>
-                        
+                        <div 
+                            class="slide-buttons" 
+                            :class="{ 'show-buttons' : showButtons }"
+                        >
+                            
+                            <ion-row>
+                                <ion-col  style="background-color: #FFDBBB; height: 118px; border-radius: 16px; margin-right:10px;">
+                                    <ion-icon style="font-size: 30px; margin-top: 35px;" color="warning" :icon="pencilOutline"/>
+                                </ion-col>
+                                <ion-col style="background-color: #FF7377; height: 118px; border-radius: 16px;">
+                                    <ion-icon style="font-size: 30px; margin-top: 35px;" color="danger" :icon="trashOutline"/>
+                                </ion-col>
+                            </ion-row>
+                        </div>
                     </div>
                 </ion-row>
                 <ion-row>
@@ -256,10 +269,54 @@ import { IonPage,
     IonNav
     
 } from '@ionic/vue'; 
-import { addOutline, bagHandle, chevronBack, ellipsisVerticalOutline, removeOutline } from 'ionicons/icons';
+import { addOutline, bagHandle, chevronBack, ellipsisVerticalOutline, pencilOutline, removeOutline, trashOutline } from 'ionicons/icons';
+
+
+import { ref } from 'vue';
+
+// Reactive variable to control button visibility
+const showButtons = ref(false);
+
+// Method to toggle the visibility of the buttons
+const toggleButtons = () => {
+  showButtons.value = !showButtons.value;
+};
 </script>
 
 <style scoped>
+.slide-buttons.show-buttons {
+  transform: translateX(0);
+}
+
+.clickable-ellipsis-icon {
+    transition: transform 0.3s ease;
+    transform: translateX(-400%);
+}
+
+.clickable-ellipsis-icon.show-buttons {
+    transform: translateX(0);
+    
+}
+
+.ellipsis-icon {
+    font-size: 30px;
+    color: orange;
+}
+
+.slide-buttons {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 13px;
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+}
+
 .summary-details-box-one {
     height: 120px;
     background-color: rgb(241, 238, 238);
@@ -271,10 +328,7 @@ import { addOutline, bagHandle, chevronBack, ellipsisVerticalOutline, removeOutl
 .summary-details-box-align {
     display: flex;
     flex-grow: 1;
-}
-.ellipsis-icon {
-    font-size: 30px;
-    color: orange;
+    position: relative;
 }
 
 .ellipsis-box {
