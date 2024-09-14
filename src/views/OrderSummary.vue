@@ -222,7 +222,7 @@
                             <ion-row>
                                 <ion-col>
                                     <p class="ion-margin-start change-for-style no-margin">Change for </p>
-                                    <p class="ion-margin-start eg-style no-margin">e.g 1.000 </p>
+                                    <p class="ion-margin-start eg-style no-margin">e.g 1,000 </p>
                                 </ion-col>
                             </ion-row>
                         </div>
