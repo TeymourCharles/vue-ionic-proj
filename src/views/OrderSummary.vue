@@ -274,10 +274,7 @@ import { addOutline, bagHandle, chevronBack, ellipsisVerticalOutline, pencilOutl
 
 import { ref } from 'vue';
 
-// Reactive variable to control button visibility
 const showButtons = ref(false);
-
-// Method to toggle the visibility of the buttons
 const toggleButtons = () => {
   showButtons.value = !showButtons.value;
 };
