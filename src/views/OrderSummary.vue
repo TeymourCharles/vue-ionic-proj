@@ -9,10 +9,7 @@
                     <ion-col class="ion-text-center ion-align-self-center" size="8">
                         <h1 class="no-margin">Order Summary</h1>
                     </ion-col>
-                    
-                    
                 </ion-row>
-                    
             </ion-toolbar>
         </ion-header>
         <ion-content>
@@ -35,7 +32,6 @@
                             class="slide-buttons" 
                             :class="{ 'show-buttons' : showButtons }"
                         >
-                            
                             <ion-row>
                                 <ion-col  style="background-color: #FFDBBB; height: 118px; border-radius: 16px; margin-right:10px;">
                                     <ion-icon style="font-size: 30px; margin-top: 35px;" color="warning" :icon="pencilOutline"/>
@@ -67,7 +63,6 @@
                             class="slide-buttons-address" 
                             :class="{ 'show-buttons-address' : showButtonsAddress }"
                         >
-                            
                             <ion-row>
                                 <ion-col  style="background-color: #FFDBBB; height: 118px; border-radius: 16px; margin-right:10px;">
                                     <ion-icon style="font-size: 30px; margin-top: 35px;" color="warning" :icon="pencilOutline"/>
@@ -77,7 +72,6 @@
                                 </ion-col>
                             </ion-row>
                         </div>
-                        
                     </div>
                 </ion-row>
                 <ion-row>
@@ -100,7 +94,6 @@
                             class="slide-buttons-sec-add" 
                             :class="{ 'show-buttons-sec-add' : showButtonsSecAdd }"
                         >
-                            
                             <ion-row>
                                 <ion-col  style="background-color: #FFDBBB; height: 118px; border-radius: 16px; margin-right:10px;">
                                     <ion-icon style="font-size: 30px; margin-top: 35px;" color="warning" :icon="pencilOutline"/>
@@ -284,7 +277,6 @@
                             </ion-row>
                         </ion-grid>
                     </ion-toolbar>
-            
         </ion-content>
     </ion-page>
 </template>
@@ -335,7 +327,6 @@ const toggleButtonsOrders = () => {
 };
 
 
-
 const quantity = ref(1)
 
 const decrementQty = () => {
@@ -379,7 +370,6 @@ const incrementQty = () => {
   transform: translateX(100%);
 }
 
-
 .slide-buttons-address.show-buttons-address {
   transform: translateX(0);
 }
@@ -415,9 +405,6 @@ const incrementQty = () => {
 .checkbox-add-hidden {
     visibility: hidden;
 }
-
-
-
 
 .slide-buttons-sec-add.show-buttons-sec-add {
   transform: translateX(0);
