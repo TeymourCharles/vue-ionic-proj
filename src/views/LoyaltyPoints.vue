@@ -86,8 +86,6 @@
                             <img src="../assets/crown.png" style="width: 30px; margin-top: 10px;" alt="crown icon">
                             <p class="no-margin" style="margin-left:8px;">20 points</p>
                         </div>
-                        
-                        
                     </ion-col>
                 </ion-row>
             </ion-grid>

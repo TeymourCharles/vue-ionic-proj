@@ -29,7 +29,6 @@
         <ion-item class="no-bottom-border">
           <ion-icon :icon="home" color="danger"/>
           <a class="no-underline ion-padding-start" href="/tabs/homepage">Home</a>
-          
         </ion-item>
         <ion-item class="no-bottom-border">
           <ion-icon class="icon-opacity" :icon="fastFood"/>

@@ -56,12 +56,26 @@
                                     <p class="address-style">No. 21 St. Agustin Street, Brgy. De Jose Del Gado City 2234 Philippines</p>
                                 </ion-col>
                                 <ion-col class="ion-text-end ion-margin-end ion-margin-top">
-                                    <ion-checkbox name="address" id="address" color="secondary" value="option"></ion-checkbox>
+                                    <ion-checkbox :class="{'checkbox-add-hidden' : showButtonsAddress}" name="address" id="address" color="secondary" value="option"></ion-checkbox>
                                 </ion-col>
                             </ion-row>
                         </div>
                         <div class="ellipsis-box">
-                            <ion-icon class="ellipsis-icon" :icon="ellipsisVerticalOutline"/>
+                            <ion-icon :class="{'clickable-ellipsis-icon-address' : showButtonsAddress}" @click="toggleButtonsAddress" style="font-size: 30px; color: orange;" :icon="ellipsisVerticalOutline"/>
+                        </div>
+                        <div 
+                            class="slide-buttons-address" 
+                            :class="{ 'show-buttons-address' : showButtonsAddress }"
+                        >
+                            
+                            <ion-row>
+                                <ion-col  style="background-color: #FFDBBB; height: 118px; border-radius: 16px; margin-right:10px;">
+                                    <ion-icon style="font-size: 30px; margin-top: 35px;" color="warning" :icon="pencilOutline"/>
+                                </ion-col>
+                                <ion-col style="background-color: #FF7377; height: 118px; border-radius: 16px;">
+                                    <ion-icon style="font-size: 30px; margin-top: 35px;" color="danger" :icon="trashOutline"/>
+                                </ion-col>
+                            </ion-row>
                         </div>
                         
                     </div>
@@ -75,20 +89,31 @@
                                     <p class="address-style">3rd flr Anyeong Bldg. Seareal St. Joaqin City 3456 Philippines</p>
                                 </ion-col>
                                 <ion-col class="ion-text-end ion-margin-end ion-margin-top">
-                                    <ion-checkbox name="address" id="address" color="secondary" value="option"></ion-checkbox>
+                                    <ion-checkbox :class="{'checkbox-add-hidden-sec-add' : showButtonsSecAdd}" name="address" id="address" color="secondary" value="option"></ion-checkbox>
                                 </ion-col>
                             </ion-row>
                         </div>
                         <div class="ellipsis-box">
-                            <ion-icon class="ellipsis-icon" :icon="ellipsisVerticalOutline"/>
+                            <ion-icon :class="{'clickable-ellipsis-sec-add' : showButtonsSecAdd}" @click="toggleButtonsSecAdd" style="font-size: 30px; color: orange;" :icon="ellipsisVerticalOutline"/>
                         </div>
-                        
+                        <div 
+                            class="slide-buttons-sec-add" 
+                            :class="{ 'show-buttons-sec-add' : showButtonsSecAdd }"
+                        >
+                            
+                            <ion-row>
+                                <ion-col  style="background-color: #FFDBBB; height: 118px; border-radius: 16px; margin-right:10px;">
+                                    <ion-icon style="font-size: 30px; margin-top: 35px;" color="warning" :icon="pencilOutline"/>
+                                </ion-col>
+                                <ion-col style="background-color: #FF7377; height: 118px; border-radius: 16px;">
+                                    <ion-icon style="font-size: 30px; margin-top: 35px;" color="danger" :icon="trashOutline"/>
+                                </ion-col>
+                            </ion-row>
+                        </div>
                     </div>
                 </ion-row>
             </ion-grid>
-
             <h1 class="orders-title ion-margin-start">Orders</h1>
-
             <ion-grid>
                 <ion-row>
                     <div class="order-summary-container">
@@ -112,15 +137,15 @@
                                     <ion-row class="ion-margin-end">
                                         <ion-col class="remove-add-icon-sumitem-bg">
                                             <div class="remove-add-icon-sumitem-bg">
-                                                <ion-icon class="" color="danger" :icon="removeOutline"/>
+                                                <ion-icon color="danger" @click="decrementQty" :icon="removeOutline"/>
                                             </div>
                                         </ion-col>
                                         <ion-col class="quantity-col ion-align-self-center">
-                                            <p class="quantity no-margin">1</p>
+                                            <p class="quantity no-margin">{{ quantity }}</p>
                                         </ion-col>
                                         <ion-col class="remove-add-icon-sumitem-bg">
                                             <div class="remove-add-icon-sumitem-bg">
-                                                <ion-icon class="" color="danger" :icon="addOutline"/>
+                                                <ion-icon color="danger" @click="incrementQty" :icon="addOutline"/>
                                             </div>
                                         </ion-col>
                                     </ion-row>
@@ -128,12 +153,24 @@
                             </ion-row>
                         </div>
                         <div class="ellipsis-box">
-                            <ion-icon class="ellipsis-icon" :icon="ellipsisVerticalOutline"/>
-                        </div> 
+                            <ion-icon :class="{'clickable-ellipsis-orders' : showButtonsOrders}" @click="toggleButtonsOrders" style="font-size: 30px; color: orange;" :icon="ellipsisVerticalOutline"/>
+                        </div>
+                        <div 
+                            class="slide-buttons-orders" 
+                            :class="{ 'show-buttons-orders' : showButtonsOrders }"
+                        >
+                            <ion-row>
+                                <ion-col  style="background-color: #FFDBBB; height: 118px; border-radius: 16px; margin-right:10px;">
+                                    <ion-icon style="font-size: 30px; margin-top: 35px;" color="warning" :icon="pencilOutline"/>
+                                </ion-col>
+                                <ion-col style="background-color: #FF7377; height: 118px; border-radius: 16px;">
+                                    <ion-icon style="font-size: 30px; margin-top: 35px;" color="danger" :icon="trashOutline"/>
+                                </ion-col>
+                            </ion-row>
+                        </div>
                     </div>
                 </ion-row>
             </ion-grid>
-            
                 <h1 class="ion-margin-start payment-title">Payment Option</h1>
                     <ion-grid>
                         <ion-row>
@@ -141,7 +178,7 @@
                                 <ion-row>
                                     <ion-col>
                                         <h6 class="no-margin cod-font-style ion-margin-start">Cash on Delivery</h6>
-                                        <p class="no-margin ion-margin-start pay-font-style">Pay when you received order</p>
+                                        <p class="no-margin ion-margin-start pay-font-style" style="font-size: 13px">Pay when you received order</p>
                                     </ion-col>
                                     <ion-col size="2">
                                         <ion-row>
@@ -157,8 +194,8 @@
                             <div class="payment-option-box">
                                 <ion-row>
                                     <ion-col>
-                                        <h6 class="no-margin cod-font-style ion-margin-start">Cash on Delivery</h6>
-                                        <p class="no-margin ion-margin-start pay-font-style">Pay when you received order</p>
+                                        <h6 class="no-margin cod-font-style ion-margin-start">Loyalty Points<b style="color:red; margin-left:10px;" >(0 points)</b></h6>
+                                        <p class="no-margin ion-margin-start pay-font-style" style="font-size: 13px">Pay using your earned loyalty points</p>
                                     </ion-col>
                                     <ion-col size="2">
                                         <ion-row>
@@ -174,8 +211,8 @@
                             <div class="payment-option-box">
                                 <ion-row>
                                     <ion-col>
-                                        <h6 class="no-margin cod-font-style ion-margin-start">Cash on Delivery</h6>
-                                        <p class="no-margin ion-margin-start pay-font-style">Pay when you received order</p>
+                                        <img style="margin-top: 2px" class="ion-margin-start" src="../assets/paypal-img.png" alt="paypal image">
+                                        <p class="no-margin ion-margin-start pay-font-style" style="font-size: 13px">A new tab will open to access your account</p>
                                     </ion-col>
                                     <ion-col size="2">
                                         <ion-row>
@@ -191,8 +228,8 @@
                             <div class="payment-option-box">
                                 <ion-row>
                                     <ion-col>
-                                        <h6 class="no-margin cod-font-style ion-margin-start">Cash on Delivery</h6>
-                                        <p class="no-margin ion-margin-start pay-font-style">Pay when you received order</p>
+                                        <img style="margin-top: 2px" class="ion-margin-start" src="../assets/paynamics.png" alt="paynamics">
+                                        <p class="no-margin ion-margin-start pay-font-style" style="font-size: 13px">Choose paynamics services available from you</p>
                                     </ion-col>
                                     <ion-col size="2">
                                         <ion-row>
@@ -278,6 +315,39 @@ const showButtons = ref(false);
 const toggleButtons = () => {
   showButtons.value = !showButtons.value;
 };
+
+
+const showButtonsAddress = ref(false);
+const toggleButtonsAddress = () => {
+  showButtonsAddress.value = !showButtonsAddress.value;
+};
+
+
+const showButtonsSecAdd = ref(false);
+const toggleButtonsSecAdd = () => {
+    showButtonsSecAdd.value = !showButtonsSecAdd.value;
+};
+
+
+const showButtonsOrders = ref(false);
+const toggleButtonsOrders = () => {
+    showButtonsOrders.value = !showButtonsOrders.value;
+};
+
+
+
+const quantity = ref(1)
+
+const decrementQty = () => {
+    if (quantity.value > 1 ) {
+        quantity.value--
+    }
+}
+
+const incrementQty = () => {
+    quantity.value++
+}
+
 </script>
 
 <style scoped>
@@ -295,11 +365,6 @@ const toggleButtons = () => {
     
 }
 
-.ellipsis-icon {
-    font-size: 30px;
-    color: orange;
-}
-
 .slide-buttons {
   position: absolute;
   right: 0;
@@ -314,6 +379,122 @@ const toggleButtons = () => {
   transform: translateX(100%);
 }
 
+
+.slide-buttons-address.show-buttons-address {
+  transform: translateX(0);
+}
+
+.clickable-ellipsis-icon-address {
+    transition: transform 0.3s ease;
+    transform: translateX(-400%);
+}
+
+.clickable-ellipsis-icon-address.show-buttons-address {
+    transform: translateX(0);
+    
+}
+
+.slide-buttons-address {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 13px;
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+}
+
+.checkbox-add-hidden.show-buttons-address {
+    transform: translateX(0%);
+}
+
+.checkbox-add-hidden {
+    visibility: hidden;
+}
+
+
+
+
+.slide-buttons-sec-add.show-buttons-sec-add {
+  transform: translateX(0);
+}
+
+.clickable-ellipsis-sec-add {
+    transition: transform 0.3s ease;
+    transform: translateX(-400%);
+}
+
+.clickable-ellipsis-sec-add.show-buttons-sec-add {
+    transform: translateX(0);
+    
+}
+
+.slide-buttons-sec-add {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 13px;
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+}
+
+.checkbox-add-hidden-sec-add.show-buttons-sec-add {
+    transform: translateX(0%);
+}
+
+.checkbox-add-hidden-sec-add {
+    visibility: hidden
+}
+
+
+.slide-buttons-orders.show-buttons-orders {
+  transform: translateX(0);
+}
+
+.clickable-ellipsis-orders {
+    transition: transform 0.3s ease;
+    transform: translateX(-400%);
+}
+
+.clickable-ellipsis-orders.show-buttons-orders {
+    transform: translateX(0);
+    
+}
+
+.slide-buttons-orders {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 13px;
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+}
+
+.ellipsis-icon {
+    font-size: 30px;
+    color: orange;
+}
+
+.ellipsis-box {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
 .summary-details-box-one {
     height: 120px;
     background-color: rgb(241, 238, 238);
@@ -326,12 +507,6 @@ const toggleButtons = () => {
     display: flex;
     flex-grow: 1;
     position: relative;
-}
-
-.ellipsis-box {
-    display: flex;
-    height: 100%;
-    align-items: center;
 }
 
 .homeaddress-font-weight {
@@ -349,6 +524,7 @@ const toggleButtons = () => {
 .order-summary-container {
     display: flex;
     flex-grow: 1;
+    position: relative;
 }
 
 .order-summary-box {

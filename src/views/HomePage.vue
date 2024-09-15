@@ -40,11 +40,8 @@
               </ion-col>
             </ion-row>
           </ion-grid>
-        
         </ion-header>
-        
         <ion-searchbar class="search-bar-size" placeholder="try our new Steak Fries Veggies"></ion-searchbar>
-        
         <ion-grid>
           <ion-row>
             <ion-col size="7">
@@ -58,23 +55,18 @@
                 <ion-icon class="" color="danger" :icon="chevronForward" />
               </div>
             </ion-col>
-            
           </ion-row>
         </ion-grid>
-        
         <ion-item class="no-bottom-border">
           <img class="ion-margin-start ion-margin-top round-img img-size-slide" src="../assets/fastfood-slide-img.png" alt="image slide">
-          
           <img class="ion-margin-start ion-margin-top round-img img-size-slide" src="../assets/fastfood-slide-img.png" alt="image slide">
         </ion-item>
-
         <h1 class="ion-margin-start added-margin-top no-margin font-weight">Category</h1>
         <ion-item class="no-bottom-border">
           <img class="ion-margin-start ion-margin-top round-img img-size-category" src="../assets/chicken-category.png" alt="image slide">
           <span class="text-position-one">Chicken</span>
           <img class="ion-margin-start ion-margin-top round-img img-size-category" src="../assets/chicken-category.png" alt="image slide">
           <span class="text-position-two">Seafoods</span>
-          
         </ion-item>
         <a class="order-now-btn" slot="fixed" href="/tabs/orderpage">
           <ion-button style="width: 150px;" class="ion-margin-start round-logout-btn" color="danger">

@@ -24,7 +24,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/OrderPage.vue')
       },
       {
-        path: 'placeorderpage',
+        path: 'placeorderpage/:id',
         component: () => import('@/views/PlaceOrderPage.vue')
       },
       {

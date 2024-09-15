@@ -1,8 +1,5 @@
 <template>
     <ion-page>
-        <ion-header>
-        
-        </ion-header>
         <ion-content>
             <div class="thumbs-up-box">
                 <img class="thumbs-up-img" src="../assets/thumbs-up.png" alt="thumbs up image">
@@ -32,8 +29,6 @@
                     </ion-row>
                 </ion-grid>
             </div>
-            
-            
         </ion-content>
     </ion-page>
 </template>

@@ -9,12 +9,10 @@
                     <ion-col class="ion-text-center ion-align-self-center" size="4">
                         <h1 class="no-margin">Meat</h1>
                     </ion-col>
-                    
                     <ion-col class="align-icon">
                         <ion-icon class="baghandle-icon" color="danger" :icon="bagHandle"/>
                     </ion-col>
                 </ion-row>
-                    
             </ion-toolbar>
         </ion-header>
         <ion-content>
@@ -33,7 +31,6 @@
                     <ion-icon class="ion-text-align-end" color="warning" :icon="star"/>
                     <ion-icon class="ion-text-align-end" color="warning" :icon="starHalf"/>
                 </div>
-                
             </div>
             <div class="div-content">
                 <p class="no-margin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium distinctio ipsum mollitia. 
@@ -47,15 +44,15 @@
                     </ion-col>
                     <ion-col class="remove-add-icon-col">
                         <div class="remove-add-icon-bg">
-                            <ion-icon class="" color="danger" :icon="removeOutline"/>
+                            <ion-icon @click="decrementQty" color="danger" :icon="removeOutline"/>
                         </div>
                     </ion-col>
                     <ion-col class="quantity-col ion-align-self-center">
-                        <p class="quantity no-margin">1</p>
+                        <p class="quantity no-margin">{{ quantity }}</p>
                     </ion-col>
                     <ion-col class="remove-add-icon-col">
                         <div class="remove-add-icon-bg">
-                            <ion-icon class="" color="danger" :icon="addOutline"/>
+                            <ion-icon @click="incrementQty" color="danger" :icon="addOutline"/>
                         </div>
                     </ion-col>
                 </ion-row>
@@ -76,18 +73,30 @@
             <ion-grid>
                 <ion-row class="margin-row-sizes">
                     <ion-col>
-                        <div class="selected-sizes">
-                            Regular
+                        <div
+                        class="size-option"
+                        :class="{ 'selected': selectedSize === 'Regular' }"
+                        @click="selectSize('Regular')"
+                        >
+                        Regular
                         </div>
                     </ion-col>
                     <ion-col>
-                        <div class="sizes">
-                            Large
+                        <div
+                        class="size-option"
+                        :class="{ 'selected': selectedSize === 'Large' }"
+                        @click="selectSize('Large')"
+                        >
+                        Large
                         </div>
                     </ion-col>
                     <ion-col>
-                        <div class="sizes">
-                            X-Large
+                        <div
+                        class="size-option"
+                        :class="{ 'selected': selectedSize === 'X-Large' }"
+                        @click="selectSize('X-Large')"
+                        >
+                        X-Large
                         </div>
                     </ion-col>
                 </ion-row>
@@ -111,15 +120,15 @@
                             <ion-row>
                                 <ion-col class="remove-add-icon-addons-bg">
                                     <div class="remove-add-icon-addons-bg">
-                                        <ion-icon class="" color="danger" :icon="removeOutline"/>
+                                        <ion-icon @click="decrementQtyAddOns" color="danger" :icon="removeOutline"/>
                                     </div>
                                 </ion-col>
                                 <ion-col class="quantity-col ion-align-self-center">
-                                    <p class="quantity no-margin">1</p>
+                                    <p class="quantity no-margin">{{ quantityAddOns }}</p>
                                 </ion-col>
                                 <ion-col class="remove-add-icon-addons-bg">
                                     <div class="remove-add-icon-addons-bg">
-                                        <ion-icon class="" color="danger" :icon="addOutline"/>
+                                        <ion-icon @click="incrementQtyAddOns" color="danger" :icon="addOutline"/>
                                     </div>
                                 </ion-col>
                             </ion-row>
@@ -145,15 +154,15 @@
                             <ion-row>
                                 <ion-col class="remove-add-icon-addons-bg">
                                     <div class="remove-add-icon-addons-bg">
-                                        <ion-icon class="" color="danger" :icon="removeOutline"/>
+                                        <ion-icon @click="decrementQtyAddOnsTwo" color="danger" :icon="removeOutline"/>
                                     </div>
                                 </ion-col>
                                 <ion-col class="quantity-col ion-align-self-center">
-                                    <p class="quantity no-margin">1</p>
+                                    <p class="quantity no-margin">{{ quantityAddOnsTwo }}</p>
                                 </ion-col>
                                 <ion-col class="remove-add-icon-addons-bg">
                                     <div class="remove-add-icon-addons-bg">
-                                        <ion-icon class="" color="danger" :icon="addOutline"/>
+                                        <ion-icon @click="incrementQtyAddOnsTwo" color="danger" :icon="addOutline"/>
                                     </div>
                                 </ion-col>
                             </ion-row>
@@ -162,37 +171,26 @@
                 </ion-grid>
             </div>
             <div class="transparent-box"></div>
-            
             <ion-button id="open-custom-dialog" class="round-addtobag-btn addtobag-btn" slot="fixed" color="danger">
                 Add to bag
             </ion-button>
-            
-
             <ion-modal id="example-modal" ref="modal" class="" trigger="open-custom-dialog">
                 <div class="wrapper">
-                
-                    
                     <div class="thumbsup-box">
                         <img src="../assets/thumbs-up.png" alt="">
                     </div>
-                    
                     <h5>Successfully Added!</h5>
-
                     <p class="no-margin">What do you want to do now?</p>
-
                     <a href="/tabs/ordersummary">
                         <ion-button class=""  color="danger">
                             Proceed to Checkout
                         </ion-button>
                     </a>
-
                     <div class="add-more">
                         <a href="/tabs/orderpage">Add More</a>
                     </div>
-                    
                 </div>
             </ion-modal>
-
         </ion-content>
     </ion-page>
 </template>
@@ -226,9 +224,48 @@ import { addOutline,
 
 import { ref } from 'vue';
 
-const modal = ref();
+const quantity = ref(1)
+const quantityAddOns = ref(0)
+const quantityAddOnsTwo = ref(0)
 
-const dismiss = () => modal.value.$el.dismiss();
+
+const decrementQty = () => {
+  if (quantity.value > 1) {
+    quantity.value--
+  }
+}
+
+const incrementQty = () => {
+  quantity.value++
+}
+
+
+const decrementQtyAddOns = () => {
+  if (quantityAddOns.value > 0) {
+    quantityAddOns.value--
+  }
+}
+
+const incrementQtyAddOns = () => {
+    quantityAddOns.value++
+}
+
+
+const decrementQtyAddOnsTwo = () => {
+  if (quantityAddOnsTwo.value > 0) {
+    quantityAddOnsTwo.value--
+  }
+}
+
+const incrementQtyAddOnsTwo = () => {
+    quantityAddOnsTwo.value++
+}
+
+const selectedSize = ref('')
+
+const selectSize = (size: string) => {
+  selectedSize.value = size
+}
 
 </script>
 
@@ -274,6 +311,29 @@ ion-modal#example-modal img{
     margin-left: 40%;
     margin-top: 10px;
 
+}
+
+
+.size-option.selected {
+    height: 50px;
+    background-color: orange;
+    color: white;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+}
+
+.size-option {
+    border: 2px;
+    border-color: black;
+    box-shadow: 1px 1px 11px -8px;
+    height: 50px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    font-weight: bold;
 }
 
 .box {
@@ -427,28 +487,6 @@ ion-modal#example-modal img{
    border-radius: 16px; 
    width: 90%;
    height: 65px;
-}
-
-.selected-sizes {
-    height: 50px;
-    background-color: orange;
-    color: white;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    border-radius: 16px;
-}
-
-.sizes {
-    border: 2px;
-    border-color: black;
-    box-shadow: 1px 1px 11px -8px;
-    height: 50px;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    border-radius: 16px;
-    font-weight: bold;
 }
 
 .margin-row-sizes {
